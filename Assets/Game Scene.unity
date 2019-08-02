@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6457a05d03e024e9743075eb7e5a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 4
   smooth: 10
 --- !u!54 &49424980
 Rigidbody:
@@ -4875,6 +4875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2038593686}
     m_Modifications:
+    - target: {fileID: 100062, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
+      propertyPath: m_Name
+      value: Skull
+      objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.16
@@ -4931,14 +4935,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 100062, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
-      propertyPath: m_Name
-      value: Skull
-      objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 52093e1abf6108f4785dec4550d57884, type: 2}
+      objectReference: {fileID: 9100000, guid: 8264a0e9a034da5439e13e1b96f527f5, type: 2}
     - target: {fileID: 9500000, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -4950,6 +4950,10 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
       propertyPath: m_UpdateMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2892de347df6e5b4c8402088313f1f09, type: 3}
