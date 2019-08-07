@@ -10,9 +10,9 @@ public class MusicCubeManager : MonoBehaviour
     public GameObject cubeA;
     public GameObject cubeH;
 
-    public float MinRange;
-    public float MaxRangeX;
-    public float MaxRangeZ;
+    public int MinRange;
+    public int MaxRangeX;
+    public int MaxRangeZ;
     public int cubeNum;
 
     void Start()
@@ -20,6 +20,7 @@ public class MusicCubeManager : MonoBehaviour
         object[,] cubePos = new object[25, 25];
 
         cubePos[0, 0] = Instantiate(cubeFsharp);
+        cubePos[1, 1] = Instantiate(cubeFsharp);
 
         for (int i = 1; i <= cubeNum; i++)
         {
