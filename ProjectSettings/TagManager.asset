@@ -8,6 +8,9 @@ TagManager:
   - SPointBottom
   - SPointLeft
   - SPointRight
+  - SPoint LowerMiddle
+  - SPoint Middle
+  - SPoint UpperMiddle
   layers:
   - Default
   - TransparentFX
