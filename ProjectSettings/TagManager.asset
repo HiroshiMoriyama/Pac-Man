@@ -11,6 +11,7 @@ TagManager:
   - SPoint LowerMiddle
   - SPoint Middle
   - SPoint UpperMiddle
+  - MusicCube
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - MusicCube
   - 
   - 
   - 

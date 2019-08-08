@@ -44,4 +44,12 @@ public class SkullController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("MusicCube"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
