@@ -1,18 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float time;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator loop(float second)
     {
-        
+        while (true)
+        {
+            yield return new WaitForSeconds(second);
+            GameObject enemy = GameObject.Find("Enemy Blue");
+            Destroy(enemy);
+            Debug.Log("IkeIke");
+        }
     }
 }

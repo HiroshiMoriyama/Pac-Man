@@ -12,10 +12,16 @@ public class SkullController : MonoBehaviour
     private Animator motion;
     private SkullState state;
 
+    GameObject item;
+    ItemController script;
+
     void Start()
     {
         motion = GetComponent<Animator>();
         state = SkullState.STAND;
+
+        item = GameObject.Find("Items");
+        script = item.GetComponent<ItemController>();
     }
 
     void Update()
@@ -55,10 +61,7 @@ public class SkullController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                other.gameObject.SetActive(false);
-            }
+            script.StartCoroutine(script.loop(script.time));
         }
     }
 }
