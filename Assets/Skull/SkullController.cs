@@ -51,5 +51,14 @@ public class SkullController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
         }
+        else if (other.gameObject.CompareTag("Attack Item"))
+        {
+            other.gameObject.SetActive(false);
+
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
     }
 }
