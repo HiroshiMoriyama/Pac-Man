@@ -17,24 +17,77 @@ public class ItemController : MonoBehaviour
         GameObject skull = GameObject.Find("Skull");
         GameObject enemy = GameObject.Find("Enemy Blue");
 
+        Vector3 skullPos = skull.transform.position;
+        Vector3 enemyPos = enemy.transform.position;
+
         while (true)
         {
-            yield return new WaitForSeconds(second);
+            
 
 
             // PCとenemyの座標が==の場合destroyも可能？上手くいかんかった
-            Destroy(enemy);
-            Debug.Log("IkeIke");
+            if (skullPos == enemyPos)
+            {
+                Destroy(enemy);
+                Debug.Log("IkeIke");
+            }
 
+            yield return new WaitForSeconds(second);
 
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    public float timeCount;
+    public int waitingTime;
+
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        
+    }
+
+    public void AttackTime()
+    {
+        
+        timeCount += Time.deltaTime;
+
+        if (timeCount > waitingTime)
         {
-            other.gameObject.SetActive(false);
+            timeCount = 0f;
         }
+
+    }
+
+    public IEnumerator loop2(bool move)
+    {
+        for (int i = 0; i < time; i++)
+        {
+            yield return new WaitForSeconds(1f);
+            timeCount++;
+
+            if (i == 4)
+            {
+                print("OK");
+                yield break;
+            }
+        }
+
+        
+
+        
+        //timeCount = 0;
+
+        //while (true)
+        //{
+            
+        //    timeCount += 1.0f * Time.deltaTime;
+
+        //    if (timeCount > waitingTime)
+        //    {
+                
+        //        yield break;
+        //    }
+            
+
+        //}
     }
 }

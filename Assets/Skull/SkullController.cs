@@ -61,7 +61,17 @@ public class SkullController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
-            script.StartCoroutine(script.loop(script.time));
+            script.StartCoroutine(script.loop2(true));
+        }
+        else if (other.gameObject.CompareTag("Enemy") 
+            && script.timeCount != 0.0f 
+            && script.timeCount != 5.0f
+            && script.timeCount != 10.0f
+            && script.timeCount != 15.0f
+            && script.timeCount != 20.0f)
+        {
+            
+            other.gameObject.SetActive(false);
         }
     }
 }
