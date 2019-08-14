@@ -70,7 +70,6 @@ public class SkullController : MonoBehaviour
             && script.timeCount != 15.0f
             && script.timeCount != 20.0f)
         {
-            
             other.gameObject.SetActive(false);
         }
     }
