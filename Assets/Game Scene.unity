@@ -11135,8 +11135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 5
-  timeCount: 0
-  waitingTime: 5
+  timeCount: -1
 --- !u!1001 &875115479
 PrefabInstance:
   m_ObjectHideFlags: 0
