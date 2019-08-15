@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Skull")
-            && script.timeCount == -1)
+            && script.isRunningCount == 0)
         {
             other.gameObject.SetActive(false);
         }
