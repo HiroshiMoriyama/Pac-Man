@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomSpawner : MonoBehaviour
+public class MusicCubeSpawner : MonoBehaviour
 {
     public GameObject musicCubeD;    //オブジェクト格納
     public GameObject musicCubeE;

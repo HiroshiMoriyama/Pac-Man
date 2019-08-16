@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkullController : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class SkullController : MonoBehaviour
     GameObject item;
     ItemController script;
 
+    private int MCCount;
+    GameObject musicCube;
+    MusicCubeSpawner MCScript;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -22,6 +27,9 @@ public class SkullController : MonoBehaviour
 
         item = GameObject.Find("Items");
         script = item.GetComponent<ItemController>();
+
+        musicCube = GameObject.Find("Music Cubes");
+        MCScript = musicCube.GetComponent<MusicCubeSpawner>();
     }
 
     void Update()
@@ -49,6 +57,14 @@ public class SkullController : MonoBehaviour
                 motion.SetBool("StartWalk", false);
             }
         }
+
+        if (MCCount <= MCScript.cubeNum
+            && MCCount <= MCScript.UpperMiddleCubeNum
+            && MCCount <= MCScript.MiddleCubeNum
+            && MCCount <= MCScript.LowerMiddleCubeNum)
+        {
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,6 +72,7 @@ public class SkullController : MonoBehaviour
         if (other.gameObject.CompareTag("MusicCube"))
         {
             other.gameObject.SetActive(false);
+            MCCount++;
         }
         else if (other.gameObject.CompareTag("Attack Item"))
         {
@@ -67,6 +84,16 @@ public class SkullController : MonoBehaviour
             && script.isRunningCount != 0)
         {
             other.gameObject.SetActive(false);
+            StartCoroutine(GameOver());
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        print("衝突");
+        speed = 0;
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync("GameOverScene");
+        print("遷移");
     }
 }

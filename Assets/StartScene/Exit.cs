@@ -22,6 +22,17 @@ public class Exit : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Skull"))
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                transform.Rotate(new Vector3(0, 20, 0));
+            }
+        }
+    }
+
     IEnumerator Wait()
     {
         print("衝突");

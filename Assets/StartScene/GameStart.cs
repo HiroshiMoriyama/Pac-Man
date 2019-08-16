@@ -19,7 +19,6 @@ public class GameStart : MonoBehaviour
         if (other.gameObject.CompareTag("Skull"))
         {
             StartCoroutine(Wait());
-            
         }
     }
 
@@ -29,9 +28,8 @@ public class GameStart : MonoBehaviour
         {
             for (int i = 0; i < 10; i++)
             {
-                transform.Rotate(new Vector3(0, 5, 5));
+                transform.Rotate(new Vector3(0, 20, 0));
             }
-
         }
     }
 
@@ -40,7 +38,7 @@ public class GameStart : MonoBehaviour
         print("衝突");
         SScript.speed = 0;
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Game Scene");
+        SceneManager.LoadSceneAsync("Game Scene");
         print("スタート");
     }
 }

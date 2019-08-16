@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -11,12 +12,18 @@ public class EnemyController : MonoBehaviour
     GameObject item;
     ItemController script;
 
+    GameObject Skull;
+    StartSkull SScript;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
         item = GameObject.Find("Items");
         script = item.GetComponent<ItemController>();
+
+        Skull = GameObject.Find("Skull");
+        SScript = Skull.GetComponent<StartSkull>();
     }
 
     void Update()
@@ -30,6 +37,15 @@ public class EnemyController : MonoBehaviour
             && script.isRunningCount == 0)
         {
             other.gameObject.SetActive(false);
+            StartCoroutine(GameOver());
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        print("衝突");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync("GameOverScene");
+        print("遷移");
     }
 }
