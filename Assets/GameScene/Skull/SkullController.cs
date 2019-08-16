@@ -7,8 +7,8 @@ public class SkullController : MonoBehaviour
 {
     private enum SkullState {  STAND, WALK };
 
-    public float speed;
-    public float smooth;
+    public float speed;         // 移動速度
+    public float smooth;        // 方向転換のスムーズさ
 
     private Animator motion;
     private SkullState state;
@@ -16,10 +16,10 @@ public class SkullController : MonoBehaviour
     GameObject item;
     ItemController script;
 
-    public int MCCount;
-    public int MCNum;
+    public int MCCount;      // MusicCube取得数
+    public int MCNum;        // MusicCube合計数
     private int MCColor = 5; // MusicCubeの種類（5色）
-    private int MCWall = 4; // MusicCubeの壁側エリア数
+    private int MCWall = 4;  // MusicCubeの壁側エリア数
     GameObject musicCube;
     MusicCubeSpawner MCScript;
 
@@ -33,6 +33,8 @@ public class SkullController : MonoBehaviour
 
         musicCube = GameObject.Find("Music Cubes");
         MCScript = musicCube.GetComponent<MusicCubeSpawner>();
+
+        //  MusicCube合計数をMCNumに代入
         MCNum = MCScript.cubeNum * MCColor * MCWall
             + MCScript.UpperMiddleCubeNum * MCColor
             + MCScript.MiddleCubeNum * MCColor

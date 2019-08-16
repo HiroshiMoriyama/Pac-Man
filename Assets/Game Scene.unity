@@ -8040,10 +8040,10 @@ MonoBehaviour:
     type: 3}
   musicCubeH: {fileID: 6275287652281575792, guid: 884a96d98022e2d4c94c056da97c30cf,
     type: 3}
-  cubeNum: 0
-  UpperMiddleCubeNum: 1
-  MiddleCubeNum: 0
-  LowerMiddleCubeNum: 0
+  cubeNum: 3
+  UpperMiddleCubeNum: 4
+  MiddleCubeNum: 12
+  LowerMiddleCubeNum: 8
 --- !u!1001 &637880264
 PrefabInstance:
   m_ObjectHideFlags: 0
