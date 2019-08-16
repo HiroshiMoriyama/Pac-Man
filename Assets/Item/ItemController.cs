@@ -15,7 +15,7 @@ public class ItemController : MonoBehaviour
 
         for (int i = 0; i < time; i++)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.81f);
         }
 
         isRunningCount--;
