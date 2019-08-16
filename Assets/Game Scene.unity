@@ -885,6 +885,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   smooth: 10
+  MCCount: 0
+  MCNum: 0
 --- !u!54 &49424980
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2835,6 +2837,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!136 &225883673
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225883668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15
+  m_Height: 1.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.74, z: 0.08}
 --- !u!1001 &235690045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8024,10 +8040,10 @@ MonoBehaviour:
     type: 3}
   musicCubeH: {fileID: 6275287652281575792, guid: 884a96d98022e2d4c94c056da97c30cf,
     type: 3}
-  cubeNum: 3
-  UpperMiddleCubeNum: 4
-  MiddleCubeNum: 12
-  LowerMiddleCubeNum: 8
+  cubeNum: 0
+  UpperMiddleCubeNum: 1
+  MiddleCubeNum: 0
+  LowerMiddleCubeNum: 0
 --- !u!1001 &637880264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8864,7 +8880,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.1507194e-24, y: 0, z: 0, w: 1e-44}
+  m_BoundingSphereOverride: {x: 0, y: 9.311036e-39, z: 0, w: 1.6325464e-26}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

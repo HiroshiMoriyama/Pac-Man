@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     ItemController script;
 
     GameObject Skull;
-    StartSkull SScript;
+    SkullController SkullScript;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
         script = item.GetComponent<ItemController>();
 
         Skull = GameObject.Find("Skull");
-        SScript = Skull.GetComponent<StartSkull>();
+        SkullScript = Skull.GetComponent<SkullController>();
     }
 
     void Update()
@@ -34,7 +34,8 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Skull")
-            && script.isRunningCount == 0)
+            && script.isRunningCount == 0
+            && SkullScript.MCCount < SkullScript.MCNum)
         {
             other.gameObject.SetActive(false);
             StartCoroutine(GameOver());
