@@ -30,19 +30,80 @@ public class StartSkull : MonoBehaviour
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-            if (state == SkullState.STAND)
+            switch (state)
             {
-                state = SkullState.WALK;
-                motion.SetBool("StartWalk", true);
+                case SkullState.STAND:
+                    motion.SetBool("StartWalk", true);
+                    break;
             }
+
+            //if (state == SkullState.STAND)
+            //{
+            //    state = SkullState.WALK;
+            //    motion.SetBool("StartWalk", true);
+            //}
         }
         else
         {
-            if (state == SkullState.WALK)
+            switch (state)
             {
-                state = SkullState.STAND;
-                motion.SetBool("StartWalk", false);
+                case SkullState.WALK:
+                    motion.SetBool("StartWalk", false);
+                    break;
             }
+
+            //if (state == SkullState.WALK)
+            //{
+            //    state = SkullState.STAND;
+            //    motion.SetBool("StartWalk", false);
+            //}
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("StartCube"))
+        {
+            StartCoroutine(Wait());
+        }
+        else if (other.gameObject.CompareTag("ExitCube"))
+        {
+            StartCoroutine(WaitExit());
+        }
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    object tagName = other.gameObject.CompareTag("StartCube");
+
+    //    switch (tagName)
+    //    {
+    //        case "StartCube":
+    //            StartCoroutine(Wait());
+    //            break;
+
+    //        case "ExitCube":
+    //            StartCoroutine(WaitExit());
+    //            break;
+    //    }
+    //}
+
+    IEnumerator Wait()
+    {
+        print("衝突");
+        speed = 0;
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync("Game Scene");
+        print("スタート");
+    }
+
+    IEnumerator WaitExit()
+    {
+        print("衝突");
+        speed = 0;
+        yield return new WaitForSeconds(1f);
+        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEngine.Application.Quit();
+        print("終了");
     }
 }

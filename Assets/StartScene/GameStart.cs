@@ -5,22 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-    GameObject Skull;
-    StartSkull SScript;
+    //GameObject Skull;
+    //StartSkull SScript;
 
-    private void Start()
-    {
-        Skull = GameObject.Find("Skull");
-        SScript = Skull.GetComponent<StartSkull>();
-    }
+    //private void Start()
+    //{
+    //    Skull = GameObject.Find("Skull");
+    //    SScript = Skull.GetComponent<StartSkull>();
+    //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Skull"))
-        {
-            StartCoroutine(Wait());
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Skull"))
+    //    {
+    //        StartCoroutine(Wait());
+    //    }
+    //}
 
     private void OnTriggerStay(Collider other)
     {
@@ -33,12 +33,12 @@ public class GameStart : MonoBehaviour
         }
     }
 
-    IEnumerator Wait()
-    {
-        print("衝突");
-        SScript.speed = 0;
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadSceneAsync("Game Scene");
-        print("スタート");
-    }
+    //IEnumerator Wait()
+    //{
+    //    print("衝突");
+    //    SScript.speed = 0;
+    //    yield return new WaitForSeconds(1f);
+    //    SceneManager.LoadSceneAsync("Game Scene");
+    //    print("スタート");
+    //}
 }

@@ -53,19 +53,33 @@ public class SkullController : MonoBehaviour
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-            if (state == SkullState.STAND)
+            switch (state)
             {
-                state = SkullState.WALK;
-                motion.SetBool("StartWalk", true);
+                case SkullState.STAND:
+                    motion.SetBool("StartWalk", true);
+                    break;
             }
+
+            //if (state == SkullState.STAND)
+            //{
+            //    state = SkullState.WALK;
+            //    motion.SetBool("StartWalk", true);
+            //}
         }
         else
         {
-            if (state == SkullState.WALK)
+            switch (state)
             {
-                state = SkullState.STAND;
-                motion.SetBool("StartWalk", false);
+                case SkullState.WALK:
+                    motion.SetBool("StartWalk", false);
+                    break;
             }
+
+            //if (state == SkullState.WALK)
+            //{
+            //    state = SkullState.STAND;
+            //    motion.SetBool("StartWalk", false);
+            //}
         }
 
         // クリアシーンへ遷移
@@ -92,10 +106,10 @@ public class SkullController : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy") 
             && script.isRunningCount != 0
             && MCCount < MCNum)
-        {
+             {
             other.gameObject.SetActive(false);
             StartCoroutine(GameOver());
-        }
+             }
     }
 
     IEnumerator GameOver()
