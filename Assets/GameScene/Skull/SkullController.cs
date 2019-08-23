@@ -34,7 +34,11 @@ public class SkullController : MonoBehaviour
     public AudioClip audioClipE;
     public AudioClip audioClipFsherp;
 
-    //GameObject CubeA;
+    GameObject CubeA;
+    GameObject CubeH;
+    GameObject CubeD;
+    GameObject CubeE;
+    GameObject CubeFsherp;
 
     void Start()
     {
@@ -53,19 +57,27 @@ public class SkullController : MonoBehaviour
             + MCScript.MiddleCubeNum * MCColor
             + MCScript.LowerMiddleCubeNum * MCColor;
 
-        audioA = gameObject.GetComponent<AudioSource>();
-        audioH = gameObject.GetComponent<AudioSource>();
-        audioD = gameObject.GetComponent<AudioSource>();
-        audioE = gameObject.GetComponent<AudioSource>();
-        audioFsherp = gameObject.GetComponent<AudioSource>();
-        audioA.clip = audioClipA;
-        audioH.clip = audioClipH;
-        audioD.clip = audioClipD;
-        audioE.clip = audioClipE;
-        audioFsherp.clip = audioClipFsherp;
+        //audioA = gameObject.GetComponent<AudioSource>();
+        //audioH = gameObject.GetComponent<AudioSource>();
+        //audioD = gameObject.GetComponent<AudioSource>();
+        //audioE = gameObject.GetComponent<AudioSource>();
+        //audioFsherp = gameObject.GetComponent<AudioSource>();
+        //audioA.clip = audioClipA;
+        //audioH.clip = audioClipH;
+        //audioD.clip = audioClipD;
+        //audioE.clip = audioClipE;
+        //audioFsherp.clip = audioClipFsherp;
 
-        //CubeA = Resources.Load("Music Cube A") as GameObject;
-        //audioA = CubeA.gameObject.GetComponent<AudioSource>();
+        CubeA = (GameObject)Resources.Load("Music Cube A");
+        audioA = CubeA.gameObject.GetComponent<AudioSource>();
+        CubeH = (GameObject)Resources.Load("Music Cube H");
+        audioH = CubeA.gameObject.GetComponent<AudioSource>();
+        CubeD = (GameObject)Resources.Load("Music Cube D");
+        audioD = CubeA.gameObject.GetComponent<AudioSource>();
+        CubeE = (GameObject)Resources.Load("Music Cube E");
+        audioE = CubeA.gameObject.GetComponent<AudioSource>();
+        CubeFsherp = (GameObject)Resources.Load("Music Cube F#");
+        audioFsherp = CubeA.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -126,7 +138,7 @@ public class SkullController : MonoBehaviour
             Music.QuantizePlay(audioA);
             other.gameObject.SetActive(false);
             MCCount++;
-            
+
         }
         else if (other.gameObject.CompareTag("MCubeH"))
         {

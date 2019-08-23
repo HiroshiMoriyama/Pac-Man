@@ -5,7 +5,7 @@ using UnityEngine;
 public class CubeAudioA : MonoBehaviour
 {
     //public AudioSource audio;
-    
+
     //void Start()
     //{
     //    audio = gameObject.GetComponent<AudioSource>();
@@ -16,6 +16,7 @@ public class CubeAudioA : MonoBehaviour
     //    if (other.gameObject.CompareTag("Skull"))
     //    {
     //        Music.QuantizePlay(audio);
+    //        //Destroy(this.gameObject);
     //    }
     //}
 }
