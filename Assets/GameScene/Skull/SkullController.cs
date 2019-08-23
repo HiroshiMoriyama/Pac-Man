@@ -23,6 +23,17 @@ public class SkullController : MonoBehaviour
     GameObject musicCube;
     MusicCubeSpawner MCScript;
 
+    AudioSource audioA;
+    AudioSource audioH;
+    AudioSource audioD;
+    AudioSource audioE;
+    AudioSource audioFsherp;
+    public AudioClip audioClipA;
+    public AudioClip audioClipH;
+    public AudioClip audioClipD;
+    public AudioClip audioClipE;
+    public AudioClip audioClipFsherp;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -39,6 +50,17 @@ public class SkullController : MonoBehaviour
             + MCScript.UpperMiddleCubeNum * MCColor
             + MCScript.MiddleCubeNum * MCColor
             + MCScript.LowerMiddleCubeNum * MCColor;
+
+        audioA = gameObject.GetComponent<AudioSource>();
+        audioH = gameObject.GetComponent<AudioSource>();
+        audioD = gameObject.GetComponent<AudioSource>();
+        audioE = gameObject.GetComponent<AudioSource>();
+        audioFsherp = gameObject.GetComponent<AudioSource>();
+        audioA.clip = audioClipA;
+        audioH.clip = audioClipH;
+        audioD.clip = audioClipD;
+        audioE.clip = audioClipE;
+        audioFsherp.clip = audioClipFsherp;
     }
 
     void Update()
@@ -92,8 +114,39 @@ public class SkullController : MonoBehaviour
     // 各オブジェクト接触時の挙動
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MusicCube"))
+        if (other.gameObject.CompareTag("MCubeA"))
         {
+            audioA.PlayOneShot(audioClipA);
+            Music.QuantizePlay(audioA);
+            other.gameObject.SetActive(false);
+            MCCount++;
+            
+        }
+        else if (other.gameObject.CompareTag("MCubeH"))
+        {
+            audioH.PlayOneShot(audioClipH);
+            Music.QuantizePlay(audioH);
+            other.gameObject.SetActive(false);
+            MCCount++;
+        }
+        else if (other.gameObject.CompareTag("MCubeD"))
+        {
+            audioD.PlayOneShot(audioClipD);
+            Music.QuantizePlay(audioD);
+            other.gameObject.SetActive(false);
+            MCCount++;
+        }
+        else if (other.gameObject.CompareTag("MCubeE"))
+        {
+            audioE.PlayOneShot(audioClipE);
+            Music.QuantizePlay(audioE);
+            other.gameObject.SetActive(false);
+            MCCount++;
+        }
+        else if (other.gameObject.CompareTag("MCubeFsherp"))
+        {
+            audioFsherp.PlayOneShot(audioClipFsherp);
+            Music.QuantizePlay(audioFsherp);
             other.gameObject.SetActive(false);
             MCCount++;
         }

@@ -17,6 +17,11 @@ TagManager:
   - Skull
   - StartCube
   - ExitCube
+  - MCubeA
+  - MCubeH
+  - MCubeD
+  - MCubeE
+  - MCubeFsherp
   layers:
   - Default
   - TransparentFX
