@@ -34,6 +34,8 @@ public class SkullController : MonoBehaviour
     public AudioClip audioClipE;
     public AudioClip audioClipFsherp;
 
+    //GameObject CubeA;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -61,6 +63,9 @@ public class SkullController : MonoBehaviour
         audioD.clip = audioClipD;
         audioE.clip = audioClipE;
         audioFsherp.clip = audioClipFsherp;
+
+        //CubeA = Resources.Load("Music Cube A") as GameObject;
+        //audioA = CubeA.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -78,6 +83,7 @@ public class SkullController : MonoBehaviour
             switch (state)
             {
                 case SkullState.STAND:
+                    state = SkullState.WALK;
                     motion.SetBool("StartWalk", true);
                     break;
             }
@@ -93,6 +99,7 @@ public class SkullController : MonoBehaviour
             switch (state)
             {
                 case SkullState.WALK:
+                    state = SkullState.STAND;
                     motion.SetBool("StartWalk", false);
                     break;
             }
@@ -116,7 +123,6 @@ public class SkullController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MCubeA"))
         {
-            audioA.PlayOneShot(audioClipA);
             Music.QuantizePlay(audioA);
             other.gameObject.SetActive(false);
             MCCount++;
@@ -124,28 +130,24 @@ public class SkullController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("MCubeH"))
         {
-            audioH.PlayOneShot(audioClipH);
             Music.QuantizePlay(audioH);
             other.gameObject.SetActive(false);
             MCCount++;
         }
         else if (other.gameObject.CompareTag("MCubeD"))
         {
-            audioD.PlayOneShot(audioClipD);
             Music.QuantizePlay(audioD);
             other.gameObject.SetActive(false);
             MCCount++;
         }
         else if (other.gameObject.CompareTag("MCubeE"))
         {
-            audioE.PlayOneShot(audioClipE);
             Music.QuantizePlay(audioE);
             other.gameObject.SetActive(false);
             MCCount++;
         }
         else if (other.gameObject.CompareTag("MCubeFsherp"))
         {
-            audioFsherp.PlayOneShot(audioClipFsherp);
             Music.QuantizePlay(audioFsherp);
             other.gameObject.SetActive(false);
             MCCount++;
