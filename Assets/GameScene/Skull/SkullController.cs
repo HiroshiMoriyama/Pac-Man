@@ -71,13 +71,13 @@ public class SkullController : MonoBehaviour
         CubeA = (GameObject)Resources.Load("Music Cube A");
         audioA = CubeA.gameObject.GetComponent<AudioSource>();
         CubeH = (GameObject)Resources.Load("Music Cube H");
-        audioH = CubeA.gameObject.GetComponent<AudioSource>();
+        audioH = CubeH.gameObject.GetComponent<AudioSource>();
         CubeD = (GameObject)Resources.Load("Music Cube D");
-        audioD = CubeA.gameObject.GetComponent<AudioSource>();
+        audioD = CubeD.gameObject.GetComponent<AudioSource>();
         CubeE = (GameObject)Resources.Load("Music Cube E");
-        audioE = CubeA.gameObject.GetComponent<AudioSource>();
+        audioE = CubeE.gameObject.GetComponent<AudioSource>();
         CubeFsherp = (GameObject)Resources.Load("Music Cube F#");
-        audioFsherp = CubeA.gameObject.GetComponent<AudioSource>();
+        audioFsherp = CubeFsherp.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -138,7 +138,6 @@ public class SkullController : MonoBehaviour
             Music.QuantizePlay(audioA);
             other.gameObject.SetActive(false);
             MCCount++;
-
         }
         else if (other.gameObject.CompareTag("MCubeH"))
         {
