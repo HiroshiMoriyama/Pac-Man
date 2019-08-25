@@ -23,17 +23,14 @@ public class SkullController : MonoBehaviour
     GameObject musicCube;
     MusicCubeSpawner MCScript;
 
+    // Music CubeのSEオブジェクトのコンポーネントを格納する変数
     AudioSource audioA;
     AudioSource audioH;
     AudioSource audioD;
     AudioSource audioE;
     AudioSource audioFsherp;
-    public AudioClip audioClipA;
-    public AudioClip audioClipH;
-    public AudioClip audioClipD;
-    public AudioClip audioClipE;
-    public AudioClip audioClipFsherp;
 
+    // Music CubeのSEオブジェクトをFind
     GameObject CubeA;
     GameObject CubeH;
     GameObject CubeD;
@@ -57,26 +54,16 @@ public class SkullController : MonoBehaviour
             + MCScript.MiddleCubeNum * MCColor
             + MCScript.LowerMiddleCubeNum * MCColor;
 
-        //audioA = gameObject.GetComponent<AudioSource>();
-        //audioH = gameObject.GetComponent<AudioSource>();
-        //audioD = gameObject.GetComponent<AudioSource>();
-        //audioE = gameObject.GetComponent<AudioSource>();
-        //audioFsherp = gameObject.GetComponent<AudioSource>();
-        //audioA.clip = audioClipA;
-        //audioH.clip = audioClipH;
-        //audioD.clip = audioClipD;
-        //audioE.clip = audioClipE;
-        //audioFsherp.clip = audioClipFsherp;
-
-        CubeA = (GameObject)Resources.Load("Music Cube A");
+        // Music CubeのSEオブジェクトからコンポーネントを格納
+        CubeA = GameObject.Find("CubeA");
         audioA = CubeA.gameObject.GetComponent<AudioSource>();
-        CubeH = (GameObject)Resources.Load("Music Cube H");
+        CubeH = GameObject.Find("CubeH");
         audioH = CubeH.gameObject.GetComponent<AudioSource>();
-        CubeD = (GameObject)Resources.Load("Music Cube D");
+        CubeD = GameObject.Find("CubeD");
         audioD = CubeD.gameObject.GetComponent<AudioSource>();
-        CubeE = (GameObject)Resources.Load("Music Cube E");
+        CubeE = GameObject.Find("CubeE");
         audioE = CubeE.gameObject.GetComponent<AudioSource>();
-        CubeFsherp = (GameObject)Resources.Load("Music Cube F#");
+        CubeFsherp = GameObject.Find("CubeF#");
         audioFsherp = CubeFsherp.gameObject.GetComponent<AudioSource>();
     }
 
