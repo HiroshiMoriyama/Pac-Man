@@ -13,10 +13,22 @@ public class StartSkull : MonoBehaviour
     private Animator motion;
     private SkullState state;
 
+    AudioSource audioRetry;
+    GameObject retry;
+
+    AudioSource audioExit;
+    GameObject exit;
+
     void Start()
     {
         motion = GetComponent<Animator>();
         state = SkullState.STAND;
+
+        retry = GameObject.Find("Retry SE");
+        audioRetry = retry.gameObject.GetComponent<AudioSource>();
+
+        exit = GameObject.Find("Exit SE");
+        audioExit = exit.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -92,7 +104,8 @@ public class StartSkull : MonoBehaviour
     {
         print("衝突");
         speed = 0;
-        yield return new WaitForSeconds(1f);
+        audioRetry.Play();
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadSceneAsync("Game Scene");
         print("スタート");
     }
@@ -101,7 +114,8 @@ public class StartSkull : MonoBehaviour
     {
         print("衝突");
         speed = 0;
-        yield return new WaitForSeconds(1f);
+        audioExit.Play();
+        yield return new WaitForSeconds(3f);
         UnityEditor.EditorApplication.isPlaying = false;
         // UnityEngine.Application.Quit();
         print("終了");

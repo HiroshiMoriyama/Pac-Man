@@ -40,6 +40,13 @@ public class SkullController : MonoBehaviour
     AudioSource audioHam;
     GameObject Ham;
 
+    AudioSource audioToClear;
+    GameObject toClear;
+    bool toClearBGM;
+
+    AudioSource audioBgm;
+    GameObject bgm;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -72,6 +79,13 @@ public class SkullController : MonoBehaviour
         // ハムのSE取得
         Ham = GameObject.Find("Ham SE");
         audioHam = Ham.gameObject.GetComponent<AudioSource>();
+
+        toClear = GameObject.Find("To Clear");
+        audioToClear = toClear.gameObject.GetComponent<AudioSource>();
+
+
+        bgm = GameObject.Find("Strings(CriAtomSource)");
+        audioBgm = bgm.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -177,7 +191,11 @@ public class SkullController : MonoBehaviour
     {
         print("衝突");
         speed = 0;
-        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(0.81f);
+        audioHam.Stop();
+
+        yield return new WaitForSeconds(1.62f);
         SceneManager.LoadSceneAsync("GameOverScene");
         print("遷移");
     }
@@ -186,7 +204,20 @@ public class SkullController : MonoBehaviour
     {
         print("衝突");
         speed = 0;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.81f);
+        audioHam.Stop();
+        yield return new WaitForSeconds(0.81f);
+        audioBgm.Stop();
+        yield return new WaitForSeconds(0.81f);
+
+        if (audioToClear.isPlaying == false && toClearBGM == false)
+        {
+            audioToClear.Play();
+            print("再生");
+            toClearBGM = true;
+        }
+
+        yield return new WaitForSeconds(6.48f);
         SceneManager.LoadSceneAsync("ClearScene");
         print("遷移");
     }
