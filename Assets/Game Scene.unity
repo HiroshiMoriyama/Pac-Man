@@ -11750,7 +11750,7 @@ MonoBehaviour:
   _volume: 1
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
+  need_to_player_update_all: 0
 --- !u!4 &894033007
 Transform:
   m_ObjectHideFlags: 0
@@ -11778,7 +11778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sections:
-  - Name: Mixdown
+  - Name: Strings
     UnitPerBeat: 4
     UnitPerBar: 16
     Tempo: 74
@@ -11798,7 +11798,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 02045b2586603b74ca9f9c7a929df578, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1c09d0f161dc2794c80c2592167abaf2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
