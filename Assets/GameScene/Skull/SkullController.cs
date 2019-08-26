@@ -37,6 +37,9 @@ public class SkullController : MonoBehaviour
     GameObject CubeE;
     GameObject CubeFsherp;
 
+    AudioSource audioHam;
+    GameObject Ham;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -65,6 +68,10 @@ public class SkullController : MonoBehaviour
         audioE = CubeE.gameObject.GetComponent<AudioSource>();
         CubeFsherp = GameObject.Find("CubeF#");
         audioFsherp = CubeFsherp.gameObject.GetComponent<AudioSource>();
+
+        // ハムのSE取得
+        Ham = GameObject.Find("Ham SE");
+        audioHam = Ham.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -152,6 +159,7 @@ public class SkullController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Attack Item"))
         {
+            Music.QuantizePlay(audioHam);
             other.gameObject.SetActive(false);
 
             script.StartCoroutine(script.loop());
