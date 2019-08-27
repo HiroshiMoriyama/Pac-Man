@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbe50e0e564a7045a4e60f8237e6a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 30
-  limitPosition: 2100
+  scrollSpeed: 26
+  limitPosition: 2400
 --- !u!114 &212965645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,12 +205,156 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\r\n<size=50>MUSIC SKULL</size>\r\n\r\n\r\n\r\n    \r\n\r\n\r\n  \r\n<size=50>Producer</size>\r\n\r\nHiroshi
-    Moriyama\r\n\r\n\r\n\r\n<size=50>Director</size>\r\n\r\nHiroshi Moriyama\r\n\r\n\r\n\r\n<size=50>Music</size>\r\n\r\nHiroshi
-    Moriyama\r\n\r\n\r\n\r\n<size=50>Scenario</size>\r\n\r\nHiroshi Moriyama\r\n\r\n\r\n\r\n<size=50>Programmer</size>\r\n\r\nHiroshi
-    Moriyama\r\n\r\n\r\n\r\n<size=50>Special Thanks</size>\r\n\r\nGFTD\r\n\r\n\r\n\r\n<size=50>...And
-    All Hiroshi Moriyama</size>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<size=50>THE
-    END</size>"
+  m_Text: '
+
+    <size=50>MUSIC SKULL</size>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <size=50>Producer</size>
+
+    
+
+    Hiroshi
+    Moriyama
+
+    
+
+    
+
+    
+
+    <size=50>Director</size>
+
+    
+
+    Hiroshi
+    Moriyama
+
+    
+
+    
+
+    
+
+    <size=50>Music</size>
+
+    
+
+    Hiroshi
+    Moriyama
+
+    
+
+    
+
+    
+
+    <size=50>Scenario</size>
+
+    
+
+    Hiroshi
+    Moriyama
+
+    
+
+    
+
+    
+
+    <size=50>Programmer</size>
+
+    
+
+    Hiroshi
+    Moriyama
+
+    
+
+    
+
+    
+
+    <size=50>Special Thanks</size>
+
+    
+
+    GFTD
+
+    
+
+    
+
+    
+
+    <size=50>...And
+    All Hiroshi Moriyama</size>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <size=50>THE
+    END</size>'
 --- !u!222 &212965646
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -743,7 +887,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 76fe30b809298d741994c81ad82e953c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30f4aeee70252084ba048d37bc6ec228, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

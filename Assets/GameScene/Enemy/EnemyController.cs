@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
+    public enum EnemyState { STAND, WALK };
+
+    private Animator motion;
+    private EnemyState state;
+
     public Transform skull;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     GameObject item;
     ItemController script;
@@ -17,6 +22,9 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        motion = GetComponent<Animator>();
+        state = EnemyState.STAND;
+
         agent = GetComponent<NavMeshAgent>();
 
         item = GameObject.Find("Items");
@@ -28,7 +36,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        agent.SetDestination(skull.position);
+        StartCoroutine(MoveStart());
+        //agent.SetDestination(skull.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,5 +57,20 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync("GameOverScene");
         print("遷移");
+    }
+
+    IEnumerator MoveStart()
+    {
+        yield return new WaitForSeconds(4.05f);
+
+        switch (state)
+        {
+            case EnemyState.STAND:
+                state = EnemyState.WALK;
+                motion.SetBool("StartRun", true);
+                break;
+        }
+        
+        agent.SetDestination(skull.position);
     }
 }

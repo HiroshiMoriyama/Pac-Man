@@ -3149,6 +3149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skull: {fileID: 1024939393}
+  agent: {fileID: 0}
 --- !u!195 &225883671
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5953,6 +5954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skull: {fileID: 1024939393}
+  agent: {fileID: 0}
 --- !u!1001 &440307472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11959,7 +11961,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23f082bfe21c7a84cb372ef447881d87, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -15679,6 +15681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skull: {fileID: 1024939393}
+  agent: {fileID: 0}
 --- !u!1001 &1179394249
 PrefabInstance:
   m_ObjectHideFlags: 0

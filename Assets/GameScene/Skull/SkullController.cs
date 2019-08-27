@@ -49,13 +49,22 @@ public class SkullController : MonoBehaviour
 
     bool checkClear;
 
+    GameObject enemy;
+    EnemyController enemySc;
+
     void Start()
     {
+        StartCoroutine(MoveStart());
+        StartCoroutine(BgmStart());
+
         motion = GetComponent<Animator>();
         state = SkullState.STAND;
 
         item = GameObject.Find("Items");
         script = item.GetComponent<ItemController>();
+
+        enemy = GameObject.Find("Enemy Blue");
+        enemySc = enemy.GetComponent<EnemyController>();
 
         musicCube = GameObject.Find("Music Cubes");
         MCScript = musicCube.GetComponent<MusicCubeSpawner>();
@@ -207,10 +216,13 @@ public class SkullController : MonoBehaviour
     {
         print("衝突");
         speed = 0;
+
         yield return new WaitForSeconds(0.81f);
         audioHam.Stop();
+
         yield return new WaitForSeconds(0.81f);
         audioBgm.Stop();
+
         yield return new WaitForSeconds(0.81f);
 
         if (audioToClear.isPlaying == false && toClearBGM == false)
@@ -223,5 +235,18 @@ public class SkullController : MonoBehaviour
         yield return new WaitForSeconds(6.48f);
         SceneManager.LoadSceneAsync("ClearScene");
         print("遷移");
+    }
+
+    IEnumerator MoveStart()
+    {
+        speed = 0;
+        yield return new WaitForSeconds(4.05f);
+        speed = 4;
+    }
+
+    IEnumerator BgmStart()
+    {
+        yield return new WaitForSeconds(0.81f);
+        audioBgm.Play();
     }
 }
