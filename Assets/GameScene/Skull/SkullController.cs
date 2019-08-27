@@ -47,6 +47,8 @@ public class SkullController : MonoBehaviour
     AudioSource audioBgm;
     GameObject bgm;
 
+    bool checkClear;
+
     void Start()
     {
         motion = GetComponent<Animator>();
@@ -132,8 +134,9 @@ public class SkullController : MonoBehaviour
         }
 
         // クリアシーンへ遷移
-        if (MCCount >= MCNum)
+        if (MCCount >= MCNum && checkClear == false)
         {
+            checkClear = true;
             StartCoroutine(Clear());
         }
     }

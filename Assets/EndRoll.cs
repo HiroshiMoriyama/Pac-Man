@@ -13,6 +13,17 @@ public class EndRoll : MonoBehaviour
 
     private bool isStopEndRoll;
 
+    AudioSource audioEnding;
+    GameObject endBgm;
+
+    void Start()
+    {
+        endBgm = GameObject.Find("Ending");
+        audioEnding = endBgm.gameObject.GetComponent<AudioSource>();
+
+        StartCoroutine(EndingBgm());
+    }
+
     void Update()
     {
         if (isStopEndRoll)
@@ -41,9 +52,22 @@ public class EndRoll : MonoBehaviour
             SceneManager.LoadScene("Start Scene");
         }
     }
+
+    IEnumerator EndingBgm()
+    {
+        yield return new WaitForSeconds(1.64f);
+        audioEnding.Play();
+    }
 }
 /*  テキスト
 
+
+
+<size=50>MUSIC SKULL</size>
+
+
+
+    
 
 
   
@@ -65,6 +89,12 @@ Hiroshi Moriyama
 
 
 
+<size=50>Scenario</size>
+
+Hiroshi Moriyama
+
+
+
 <size=50>Programmer</size>
 
 Hiroshi Moriyama
@@ -78,6 +108,8 @@ GFTD
 
 
 <size=50>...And All Hiroshi Moriyama</size>
+
+
 
 
 
