@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class StartSkull : MonoBehaviour
 {
@@ -116,7 +117,7 @@ public class StartSkull : MonoBehaviour
         speed = 0;
         audioExit.Play();
         yield return new WaitForSeconds(3f);
-        UnityEditor.EditorApplication.isPlaying = false;
+        EditorApplication.isPlaying = false;
         // UnityEngine.Application.Quit();
         print("終了");
     }
